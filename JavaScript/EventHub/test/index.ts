@@ -18,7 +18,7 @@ const test2: TestCase = message => {
 
     eventHub.emit('xxx', 'yyy')
     setTimeout(() => {
-        console.assert(called === true)
+        console.assert(called === false)
         console.log(message)
     }, 1000)
 }

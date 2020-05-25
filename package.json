@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/**/*.js"
+    "test:DP": "mocha JavaScript/DeepClone/test/**/*.js"
   },
   "dependencies": {
     "chai": "^4.2.0",
