@@ -37,20 +37,38 @@ class EventHub {
 
     off(eventName, fn) {
         // 把  this.cache[eventName] 数组删除
-        this.cache[eventName] = this.cache[eventName] || []
-        let index
-        for (let i = 0; i < this.cache[eventName].length; i++) {
-            if (this.cache[eventName][i] === fn) {
-                index = i
-                break
-            }
-        }
-        if (index === undefined) {
-            return
-        } else {
-            this.cache[eventName].splice(index, 1)
-        }
+
+        // 优化代码
+        // this.cache[eventName] = this.cache[eventName] || []
+        // let index
+        // for (let i = 0; i < this.cache[eventName].length; i++) {
+        //     if (this.cache[eventName][i] === fn) {
+        //         index = i
+        //         break
+        //     }
+        // }
+        // if (index === undefined) {
+        //     return
+        // } else {
+        //     this.cache[eventName].splice(index, 1)
+        // }
+
+        let index = indexOf(this.cache[eventName], fn)
+        if (index === -1) return
+        this.cache[eventName].splice(index, 1)
     }
 }
 
 export default EventHub
+
+function indexOf(array, item) {
+    if (array === undefined) return -1
+    let index = -1
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            index = i
+            break
+        }
+    }
+    return index
+}
