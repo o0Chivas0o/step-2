@@ -20,7 +20,7 @@ class EventHub {
         this.cache[eventName].push(fn)
     }
 
-    emit(eventName) {
+    emit(eventName, data?) {
         // 把  this.cache[eventName] 数组 里面的 fn 全部依次调用
 
         // 代码优化
@@ -32,7 +32,24 @@ class EventHub {
         //     fn()
         // })
 
-        (this.cache[eventName] || []).forEach(fn => fn())
+        (this.cache[eventName] || []).forEach(fn => fn(data))
+    }
+
+    off(eventName, fn) {
+        // 把  this.cache[eventName] 数组删除
+        this.cache[eventName] = this.cache[eventName] || []
+        let index
+        for (let i = 0; i < this.cache[eventName].length; i++) {
+            if (this.cache[eventName][i] === fn) {
+                index = i
+                break
+            }
+        }
+        if (index === undefined) {
+            return
+        } else {
+            this.cache[eventName].splice(index, 1)
+        }
     }
 }
 
