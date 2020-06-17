@@ -12,7 +12,6 @@ const db = {
         let list
         try {
           list = JSON.parse(data.toString())
-          console.log(list)
         }
         catch (error2) {
           list = []
