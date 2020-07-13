@@ -3,6 +3,9 @@ const fs = require('fs')
 jest.mock('fs')
 
 describe('db', () => {
+  afterEach(()=>{
+    fs.clearMocks()
+  })
   it('can read', async () => {
     const data = {title: 'hi', done: true}
     fs.setReadFileMocks('/xxx', null, JSON.stringify(data))
