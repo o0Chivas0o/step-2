@@ -51,5 +51,39 @@ describe("Promise", () => {
     // @ts-ignore
     promise.then(success)
   })
+  it("promise.then(null,fail) 中的 fail 会在 reject 被调用的时候执行", (done) => {
+    const fail = sinon.fake()
+    const promise = new Promise((resolve, reject) => {
+      assert.isFalse(fail.called)
+      reject()
+      setTimeout(() => {
+        assert(promise.state = 'reject')
+        assert.isTrue(fail.called)
+        done()
+      })
+    })
+    // @ts-ignore
+    promise.then(null, fail)
+  })
+  it("2.2.1", () => {
+    const promise = new Promise((resolve) => {
+      resolve()
+    })
+    promise.then(false, null)
+  })
+  it("2.2.2", (done) => {
+    const succeed = sinon.fake()
+    const promise = new Promise((resolve) => {
+      assert.isFalse(succeed.called)
+      resolve(233)
+      setTimeout(() => {
+        assert(promise.state = 'fullfilled')
+        assert.isTrue(succeed.called)
+        assert(succeed.calledWith(233))
+        done()
+      }, 0)
+    })
+    promise.then(succeed)
+  })
 })
 
