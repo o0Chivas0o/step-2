@@ -157,9 +157,9 @@ describe("Promise", () => {
       reject()
     })
     const callbacks = [sinon.fake(), sinon.fake(), sinon.fake()]
-    promise.then(null,callbacks[0])
-    promise.then(null,callbacks[1])
-    promise.then(null,callbacks[2])
+    promise.then(null, callbacks[0])
+    promise.then(null, callbacks[1])
+    promise.then(null, callbacks[2])
     setTimeout(() => {
       assert(callbacks[0].called)
       assert(callbacks[1].called)
@@ -168,6 +168,32 @@ describe("Promise", () => {
       assert(callbacks[2].calledAfter(callbacks[1]))
       done()
     }, 0)
+  })
+  it("2.2.7 then必须返回一个promise", () => {
+    const promise = new Promise(resolve => {
+      resolve()
+    })
+    const promise2 = promise.then(() => {}, () => {})
+    // @ts-ignore
+    assert(promise2 instanceof Promise)
+  })
+  it('2.2.7.1 如果onFulfilled或onRejected返回一个值x, 运行 [[Resolve]](promise2,x)', () => {
+    const promise1 = new Promise(resolve => resolve())
+    promise1
+        .then(() => '成功')
+        .then(result => {
+          assert.equal(result, '成功')
+        })
+  })
+  it('2.2.7.2 x 是一个 Promise', done => {
+    const promise1 = new Promise(resolve => resolve())
+    const fn = sinon.fake()
+    const promise2 = promise1.then(() => new Promise(resolve => resolve()), () => {})
+    promise2.then(fn)
+    setTimeout(() => {
+      assert(fn.called)
+      done()
+    }, 10)
   })
 })
 
