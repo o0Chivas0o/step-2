@@ -1,0 +1,36 @@
+Arguments: 
+  D:\Fang\Software\Nodejs14\node.exe D:\Fang\Software\yarn\bin\yarn.js init
+
+PATH: 
+  C:\Ruby\Ruby26-x64\bin;D:\Fang\Software\cmder\vendor\git-for-windows\mingw64\bin;D:\Fang\Software\cmder\vendor\git-for-windows\usr\bin;D:\Fang\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Users\Fang\AppData\Local\Programs\Python\Python37;C:\Users\Fang\AppData\Local\Programs\Python\Python37\Scripts;D:\Fang\Software\python27;D:\Fang\Software\python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NGX;D:\Fang\Software\cmder;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files (x86)\Common Files\Thunder Network\KanKan\Codecs;D:\Fang\Desktop;D:\Fang\Software\yarn\bin;D:\Fang\Software\pmd-bin-6.16.0\bin;D:\Fang\Software\hugo;D:\Fang\Software\erl10.3\bin;D:\Fang\Software\Elixir\bin;C:\Users\Fang\.mix\escripts;D:\Fang\Software\yarn\bin;D:\Fang\Software\Nodejs14;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Pandoc;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Fang\Software\texlive\2019\bin\win32;C:\Users\Fang\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\Fang\AppData\Local\Programs\Python\Python37;C:\Ruby\Ruby26-x64\bin;C:\Users\Fang\AppData\Local\Microsoft\WindowsApps;C:\Users\Fang\AppData\Local\Programs\Microsoft VS Code\bin;D:\Fang\Software\flutter\bin;D:\Fang\Software\cmake\bin;C:\Users\Fang\AppData\Local\Programs\Fiddler;D:\Fang\Software\v2ray-windows-64;D:\Fang\Software\ffmpeg\bin;C:\Users\Fang\.deno\bin;D:\Fang\Software;D:\Fang\Software\Cypress;C:\Users\Fang\AppData\Local\Yarn\bin;C:\Users\Fang\AppData\Roaming\npm;C:\Users\Fang\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Docker Toolbox;C:\Program Files\obs-studio\bin\64bit;C:\WINDOWS\System32\Wbem;C:\Program Files\JetBrains\WebStorm 2020.1\bin;D:\Fang\Software\cmder\vendor\git-for-windows\usr\bin;D:\Fang\Software\groovy-3.0.4\bin;D:\Fang\Software\video-remove-silence-master;C:\Program Files (x86)\GitHub CLI
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.3.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (D:\Fang\Software\yarn\lib\cli.js:137008:13)
+      at Interface.emit (events.js:315:20)
+      at Interface._ttyWrite (readline.js:873:16)
+      at ReadStream.onkeypress (readline.js:213:10)
+      at ReadStream.emit (events.js:315:20)
+      at emitKeys (internal/readline/utils.js:335:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1140:36)
+      at ReadStream.emit (events.js:315:20)
+      at addChunk (_stream_readable.js:302:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
