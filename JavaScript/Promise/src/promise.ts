@@ -1,7 +1,7 @@
 class Promise2 {
   state = 'pending'
   callbacks = []
-
+  
   resolve(result) {
     if (this.state !== 'pending') return
     this.state = 'fullfilled'
@@ -14,6 +14,7 @@ class Promise2 {
       })
     }, 0)
   }
+  
   reject(reason) {
     if (this.state !== 'pending') return
     this.state = 'rejected'
@@ -26,12 +27,14 @@ class Promise2 {
       })
     }, 0)
   }
+  
   constructor(fn) {
     if (typeof fn !== 'function') {
-      throw new Error("我只接受函数")
+      throw new Error('我只接受函数')
     }
     fn(this.resolve.bind(this), this.reject.bind(this))
   }
+  
   then(succeed?, fail?) {
     const handle = []
     if (typeof succeed === 'function') {
@@ -44,6 +47,7 @@ class Promise2 {
     this.callbacks.push(handle)
     return handle[2]
   }
+  
   resolveWith(x) {
     if (this === x) {
       this.reject(new TypeError())
